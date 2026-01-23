@@ -1322,7 +1322,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"supplierId\": \"64f000000000000000000001\",\n  \"warehouseId\": \"64f000000000000000000002\",\n  \"items\": [\n    {\n      \"sku\": \"SKU-NEW-001\",\n      \"quantityOrdered\": 5,\n      \"unitCost\": 20,\n      \"productDetails\": {\n        \"name\": \"New Product From PO\",\n        \"description\": \"Created automatically when creating PO\",\n        \"price\": {\n          \"cost\": 20\n        },\n        \"quantity\": 0,\n        \"brand\": \"Megha\",\n        \"status\": \"active\"\n      }\n    }\n  ],\n  \"tax\": 0,\n  \"shipping\": 0,\n  \"currency\": \"USD\",\n  \"status\": \"draft\",\n  \"notes\": \"PO created using productDetails (auto product create)\"\n}"
+							"raw": "{\n  \"supplierId\": \"69737de5cf8b2ea43e943267\",\n  \"warehouseId\": \"64f000000000000000000002\",\n  \"items\": [\n    {\n      \"sku\": \"SKU-NEW-001\",\n      \"quantityOrdered\": 5,\n      \"unitCost\": 20,\n      \"productDetails\": {\n        \"name\": \"New Product From PO\",\n        \"description\": \"Created automatically when creating PO\",\n        \"price\": {\n          \"cost\": 20\n        },\n        \"quantity\": 0,\n        \"brand\": \"Megha\",\n        \"status\": \"active\"\n      }\n    }\n  ],\n  \"tax\": 0,\n  \"shipping\": 0,\n  \"currency\": \"USD\",\n  \"status\": \"draft\",\n  \"notes\": \"PO created using productDetails (auto product create)\"\n}"
 						},
 						"url": {
 							"raw": "{{base_url}}/api/purchase-orders",
