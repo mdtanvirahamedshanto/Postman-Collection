@@ -1396,9 +1396,9 @@
 							"raw": "{\n  \"status\": \"confirmed\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}/status",
+							"raw": "{{base_url}}/api/purchase-orders/{{purchaseOrderId}}/status",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"api",
@@ -1433,9 +1433,9 @@
 							"raw": "{\n  \"paymentStatus\": \"paid\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}/payment-status",
+							"raw": "{{base_url}}/api/purchase-orders/{{purchaseOrderId}}/payment-status",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"api",
@@ -1470,9 +1470,9 @@
 							"raw": "{\n  \"itemIndex\": 0,\n  \"quantityReceived\": 5\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}/item-received",
+							"raw": "{{base_url}}/api/purchase-orders/{{purchaseOrderId}}/item-received",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"api",
@@ -1499,9 +1499,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}",
+							"raw": "{{base_url}}/api/purchase-orders/{{purchaseOrderId}}",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"api",
