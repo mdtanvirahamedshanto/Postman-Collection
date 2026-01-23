@@ -1209,9 +1209,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/purchase-orders?page=1&limit=10&sortBy=orderDate&sortOrder=desc",
+							"raw": "{{base_url}}/api/purchase-orders?page=1&limit=10&sortBy=orderDate&sortOrder=desc",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"api",
@@ -1254,9 +1254,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}",
+							"raw": "{{base_url}}/api/purchase-orders/{{purchaseOrderId}}",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"api",
