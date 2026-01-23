@@ -1514,6 +1514,94 @@
 				}
 			],
 			"id": "30303931-2b30e1f9-7c2b-4588-99e4-d8195473a46a"
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "Upload Single Image",
+					"id": "30303931-e5a391e3-9517-44e7-bbc5-c5cc1998752c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"value": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/media/upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"media",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Multiple Images",
+					"id": "30303931-bc065396-5206-4867-896d-8a8c66c56e3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"value": ""
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"value": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/media/upload/multiple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"media",
+								"upload",
+								"multiple"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "30303931-db5fd720-f19a-4bad-ad99-b067d4a5e265"
 		}
 	],
 	"event": [
