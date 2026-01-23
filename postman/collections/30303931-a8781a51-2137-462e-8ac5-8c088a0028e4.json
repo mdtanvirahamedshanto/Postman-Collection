@@ -1287,7 +1287,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"supplierId\": \"64f000000000000000000001\",\n  \"warehouseId\": \"64f000000000000000000002\",\n  \"items\": [\n    {\n      \"productId\": \"64f000000000000000000010\",\n      \"sku\": \"SKU-001\",\n      \"quantityOrdered\": 10,\n      \"unitCost\": 12.5\n    }\n  ],\n  \"tax\": 0,\n  \"shipping\": 0,\n  \"currency\": \"USD\",\n  \"status\": \"draft\",\n  \"notes\": \"PO created using existing productId\"\n}"
+							"raw": "{\n  \"supplierId\": \"69737de5cf8b2ea43e943267\",\n  \"items\": [\n    {\n      \"productId\": \"69737e8a87f78ee9edaa3507\",\n      \"sku\": \"SKU-001\",\n      \"quantityOrdered\": 10,\n      \"unitCost\": 12.5\n    }\n  ],\n  \"tax\": 0,\n  \"shipping\": 0,\n  \"currency\": \"USD\",\n  \"status\": \"draft\",\n  \"notes\": \"PO created using existing productId\"\n}"
 						},
 						"url": {
 							"raw": "{{base_url}}/api/purchase-orders",
