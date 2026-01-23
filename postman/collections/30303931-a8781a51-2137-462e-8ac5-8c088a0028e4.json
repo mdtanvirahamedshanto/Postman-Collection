@@ -1538,7 +1538,14 @@
 								{
 									"key": "image",
 									"type": "file",
-									"value": ""
+									"src": [
+										"postman-cloud:///1f07a9e6-ef09-4f50-aa2f-21399a3bfc05",
+										{
+											"actual": null,
+											"name": "",
+											"path": ""
+										}
+									]
 								}
 							]
 						},
