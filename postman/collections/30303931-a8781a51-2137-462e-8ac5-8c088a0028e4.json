@@ -1190,6 +1190,330 @@
 			],
 			"id": "30303931-85bc0d6c-ac7e-4986-abe9-d03e412283c1",
 			"description": "Product management endpoints"
+		},
+		{
+			"name": "Purchase Orders",
+			"item": [
+				{
+					"name": "List Purchase Orders",
+					"id": "30303931-ee8aef7a-6155-4483-82d1-fc1110d9e1f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders?page=1&limit=10&sortBy=orderDate&sortOrder=desc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sortBy",
+									"value": "orderDate"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Purchase Order By ID",
+					"id": "30303931-307092ff-dee7-4b36-80d7-0e88806a4f2c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders",
+								"{{purchaseOrderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create PO (Existing productId)",
+					"id": "30303931-d2be68f4-d326-416b-865b-606977c50cf3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"supplierId\": \"64f000000000000000000001\",\n  \"warehouseId\": \"64f000000000000000000002\",\n  \"items\": [\n    {\n      \"productId\": \"64f000000000000000000010\",\n      \"sku\": \"SKU-001\",\n      \"quantityOrdered\": 10,\n      \"unitCost\": 12.5\n    }\n  ],\n  \"tax\": 0,\n  \"shipping\": 0,\n  \"currency\": \"USD\",\n  \"status\": \"draft\",\n  \"notes\": \"PO created using existing productId\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create PO (Create Product via productDetails)",
+					"id": "30303931-44034d3c-4f1e-4db2-a713-6f3544eb9c6d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"supplierId\": \"64f000000000000000000001\",\n  \"warehouseId\": \"64f000000000000000000002\",\n  \"items\": [\n    {\n      \"sku\": \"SKU-NEW-001\",\n      \"quantityOrdered\": 5,\n      \"unitCost\": 20,\n      \"productDetails\": {\n        \"name\": \"New Product From PO\",\n        \"description\": \"Created automatically when creating PO\",\n        \"price\": {\n          \"cost\": 20\n        },\n        \"quantity\": 0,\n        \"brand\": \"Megha\",\n        \"status\": \"active\"\n      }\n    }\n  ],\n  \"tax\": 0,\n  \"shipping\": 0,\n  \"currency\": \"USD\",\n  \"status\": \"draft\",\n  \"notes\": \"PO created using productDetails (auto product create)\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Purchase Order (PUT)",
+					"id": "30303931-d769d8af-e992-4188-8285-e4fd509253a3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"confirmed\",\n  \"notes\": \"Updated PO via PUT\",\n  \"items\": [\n    {\n      \"productId\": \"64f000000000000000000010\",\n      \"sku\": \"SKU-001\",\n      \"quantityOrdered\": 12,\n      \"unitCost\": 12.5\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders",
+								"{{purchaseOrderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Purchase Order Status (PATCH)",
+					"id": "30303931-6ff29edb-0e33-4df1-94bc-97e98d4e0652",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"confirmed\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders",
+								"{{purchaseOrderId}}",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Purchase Order Payment Status (PATCH)",
+					"id": "30303931-588ad4dc-f688-4791-b4cf-49acb60dd2cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"paymentStatus\": \"paid\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}/payment-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders",
+								"{{purchaseOrderId}}",
+								"payment-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item Received Quantity (PATCH)",
+					"id": "30303931-a1204e97-8868-43dc-922d-5b98c8475c3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"itemIndex\": 0,\n  \"quantityReceived\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}/item-received",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders",
+								"{{purchaseOrderId}}",
+								"item-received"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Purchase Order",
+					"id": "30303931-3fefc339-79ed-4a67-a64b-74810d5d6cbc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/purchase-orders/{{purchaseOrderId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"purchase-orders",
+								"{{purchaseOrderId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "30303931-2b30e1f9-7c2b-4588-99e4-d8195473a46a"
 		}
 	],
 	"event": [
